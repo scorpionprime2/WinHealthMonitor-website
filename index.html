@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Monitor Windows health, storage, and hardware temperatures with WinHealthMonitor.">
+  <meta name="theme-color" content="#101923">
+  <title>WinHealthMonitor — Windows health, at a glance</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #101923;
+      color: #eef4fa;
+      line-height: 1.6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1040px; margin: auto; padding: 32px 24px 56px; }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    nav a, footer a { color: #9ce8c5; }
+    .brand { color: #eef4fa; font-weight: 750; text-decoration: none; }
+    .hero { padding: 76px 0 56px; max-width: 760px; }
+    .eyebrow { color: #74dfae; font-size: .82rem; font-weight: 750; letter-spacing: .13em; }
+    h1 { margin: 12px 0 20px; font-size: clamp(2.6rem, 8vw, 5rem); line-height: 1.03; letter-spacing: -.04em; }
+    h2 { line-height: 1.2; }
+    .lead { max-width: 650px; color: #bdcbd8; font-size: 1.15rem; }
+    .button { display: inline-block; margin: 18px 0 8px; padding: 13px 22px; border-radius: 9px; background: #54d6a0; color: #092018; font-weight: 750; text-decoration: none; }
+    .button:hover { background: #76e5b7; }
+    .meta { color: #9eacba; font-size: .92rem; }
+    .ad { margin: 16px 0 54px; min-height: 96px; display: grid; place-items: center; border: 1px dashed #445464; border-radius: 10px; color: #9eacba; text-align: center; }
+    .ad small { display: block; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    article { padding: 20px; background: #182532; border: 1px solid #263746; border-radius: 12px; }
+    article p { color: #bdcbd8; }
+    .notice { margin-top: 28px; padding: 18px; border-left: 4px solid #e6ba63; background: #202a31; border-radius: 6px; color: #d3dce4; }
+    footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 44px; padding-top: 20px; border-top: 1px solid #334455; color: #9eacba; font-size: .9rem; }
+    @media (max-width: 600px) { main { padding-inline: 18px; } .hero { padding-top: 54px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#top">WinHealthMonitor</a>
+      <a href="#features">Features</a>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="eyebrow">WINDOWS PC HEALTH MONITORING</div>
+      <h1>Know how your PC is doing.</h1>
+      <p class="lead">Check system health, storage events, drive space, and live hardware temperatures from one straightforward Windows dashboard.</p>
+      <a class="button" href="downloads/WinHealthMonitor-1.4.0-light-win-x64.zip" download>Download for Windows</a>
+      <div class="meta">Version 1.4.0 · Windows x64 · Lightweight package</div>
+    </header>
+
+    <aside class="ad" aria-label="Advertisement">
+      <div><small>ADVERTISEMENT</small>Ad space</div>
+      <!-- Add a reputable ad provider's embed only after reviewing its privacy and consent requirements. -->
+    </aside>
+
+    <section id="features" aria-labelledby="features-title">
+      <h2 id="features-title">A clearer picture of system health</h2>
+      <div class="grid">
+        <article>
+          <h3>Health score and history</h3>
+          <p>Review a score breakdown for memory, disk capacity, and storage-related Windows events, with local history of recent scores.</p>
+        </article>
+        <article>
+          <h3>Live temperatures</h3>
+          <p>View CPU, GPU, and storage temperatures from HWiNFO shared memory while HWiNFO is running and configured to share sensor data.</p>
+        </article>
+        <article>
+          <h3>Reports and maintenance</h3>
+          <p>Save health reports, schedule optional weekly scans, and run confirmed Windows repair checks when you choose.</p>
+        </article>
+      </div>
+    </section>
+
+    <p class="notice"><strong>Requirements and security:</strong> This lightweight package requires the Microsoft .NET 10 Desktop Runtime for Windows x64. The app package is unsigned, so Windows may display a security warning. Only run software you trust. Health checks are indicators, not a diagnosis; back up important data before system repairs.</p>
+
+    <footer>
+      <span>WinHealthMonitor · Windows x64</span>
+      <span>Questions? Contact the app publisher.</span>
+    </footer>
+  </main>
+</body>
+</html>
