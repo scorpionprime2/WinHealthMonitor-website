@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Purchase a single-device WinHealthMonitor license.">
+  <meta name="theme-color" content="#F3F6FB">
+  <title>Purchase WinHealthMonitor</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #F3F6FB;
+      color: #405674;
+      line-height: 1.6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 900px; margin: auto; padding: 32px 24px 56px; }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    nav a { color: #2463A6; }
+    a:focus-visible { outline: 3px solid #2F80D1; outline-offset: 3px; }
+    .brand { color: #243B5A; font-weight: 750; text-decoration: none; }
+    .purchase { margin-top: 48px; }
+    .purchase-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: center; gap: 28px; padding: 24px; border: 1px solid #E1E7F0; border-radius: 12px; background: #F7F9FC; }
+    .eyebrow { color: #2463A6; font-size: .82rem; font-weight: 750; letter-spacing: .13em; }
+    h1 { margin: 10px 0; color: #172B4D; font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.08; }
+    .price { margin: 16px 0 4px; color: #52627A; }
+    .price strong { color: #172B4D; font-size: 2rem; }
+    .license { margin: 0; color: #52627A; }
+    figure { margin: 0; padding: 16px; border: 1px solid #E1E7F0; border-radius: 10px; background: #FFFFFF; text-align: center; }
+    figure img { display: block; width: min(100%, 360px); height: auto; margin: auto; }
+    figcaption { margin-top: 10px; color: #24344D; font-size: .9rem; }
+    .notice { margin-top: 24px; padding: 18px; border-left: 4px solid #FBBF24; border-radius: 6px; background: #FFFFFF; color: #405674; }
+    .notice strong { color: #24344D; }
+    .back { display: inline-block; margin-top: 24px; color: #2463A6; }
+    @media (max-width: 760px) { main { padding-inline: 18px; } .purchase { margin-top: 32px; } .purchase-card { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Purchase page navigation">
+      <a class="brand" href="index.html">WinHealthMonitor</a>
+      <a href="index.html">Back to home</a>
+    </nav>
+
+    <section class="purchase" aria-labelledby="purchase-title">
+      <div class="purchase-card">
+        <div>
+          <div class="eyebrow">SOFTWARE LICENSE</div>
+          <h1 id="purchase-title">WinHealthMonitor</h1>
+          <p class="price"><strong>£2.99</strong> one-time purchase</p>
+          <p class="license">Single-device license</p>
+        </div>
+        <figure>
+          <img src="assets/paypal-purchase-qr.png" alt="PayPal payment QR code">
+          <figcaption>Scan this QR code to pay with PayPal.</figcaption>
+        </figure>
+      </div>
+
+      <p class="notice"><strong>Manual license fulfillment:</strong> After payment is reviewed, the license key is generated and delivered manually. Key generation and delivery are not automatic.</p>
+      <a class="back" href="index.html">Return to the WinHealthMonitor website</a>
+    </section>
+  </main>
+</body>
+</html>

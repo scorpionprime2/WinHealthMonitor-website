@@ -4,37 +4,86 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Monitor Windows health, storage, and hardware temperatures with WinHealthMonitor.">
-  <meta name="theme-color" content="#101923">
+  <meta name="theme-color" content="#F3F6FB">
   <title>WinHealthMonitor — Windows health, at a glance</title>
   <style>
     :root {
-      color-scheme: dark;
+      color-scheme: light;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #101923;
-      color: #eef4fa;
+      background: #F3F6FB;
+      color: #405674;
       line-height: 1.6;
     }
     * { box-sizing: border-box; }
     body { margin: 0; }
     main { max-width: 1040px; margin: auto; padding: 32px 24px 56px; }
     nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-    nav a, footer a { color: #9ce8c5; }
-    .brand { color: #eef4fa; font-weight: 750; text-decoration: none; }
+    nav a, footer a { color: #2463A6; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #2F80D1; outline-offset: 3px; }
+    .brand { color: #243B5A; font-weight: 750; text-decoration: none; }
+    h1, h2, h3 { color: #172B4D; }
     .hero { padding: 76px 0 56px; max-width: 760px; }
-    .eyebrow { color: #74dfae; font-size: .82rem; font-weight: 750; letter-spacing: .13em; }
+    .eyebrow { color: #2463A6; font-size: .82rem; font-weight: 750; letter-spacing: .13em; }
     h1 { margin: 12px 0 20px; font-size: clamp(2.6rem, 8vw, 5rem); line-height: 1.03; letter-spacing: -.04em; }
     h2 { line-height: 1.2; }
-    .lead { max-width: 650px; color: #bdcbd8; font-size: 1.15rem; }
-    .button { display: inline-block; margin: 18px 0 8px; padding: 13px 22px; border-radius: 9px; background: #54d6a0; color: #092018; font-weight: 750; text-decoration: none; }
-    .button:hover { background: #76e5b7; }
-    .meta { color: #9eacba; font-size: .92rem; }
-    .ad { margin: 16px 0 54px; min-height: 96px; display: grid; place-items: center; border: 1px dashed #445464; border-radius: 10px; color: #9eacba; text-align: center; }
-    .ad small { display: block; }
+    .lead { max-width: 650px; color: #52627A; font-size: 1.15rem; }
+    .button { display: inline-block; margin: 18px 0 8px; padding: 13px 22px; border-radius: 9px; background: #2463A6; color: #F8FAFC; font-weight: 750; text-decoration: none; }
+    .button:hover { background: #2F80D1; }
+    .meta { color: #52627A; font-size: .92rem; }
+    .purchase { margin: 0 0 32px; }
+    .purchase-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: center; gap: 22px; padding: 22px; border: 1px solid #E1E7F0; border-radius: 12px; background: #F7F9FC; }
+    .purchase-card h2 { color: #24344D; }
+    .purchase-kicker { color: #2463A6; font-size: .78rem; font-weight: 750; letter-spacing: .1em; }
+    .purchase h2 { margin: 6px 0; }
+    .purchase-price { margin: 8px 0; color: #405674; }
+    .purchase-price strong { color: #172B4D; font-size: 2rem; }
+    .purchase-license { margin: 0; color: #52627A; }
+    .purchase-link { display: block; padding: 12px 18px; border-radius: 7px; background: #2463A6; color: #F8FAFC; font-weight: 750; text-align: center; text-decoration: none; }
+    .purchase-link:hover { background: #2F80D1; }
+    .purchase-note { margin: 12px 0 0; color: #405674; font-size: .86rem; }
+    .ad { margin: 16px 0 54px; padding: 22px; border: 1px dashed #DCE5F0; border-left: 4px solid #D97757; border-radius: 10px; background: #E7F0FF; color: #405674; }
+    .ad-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: start; gap: 22px; }
+    .ad small { display: block; color: #243B5A; font-size: .78rem; font-weight: 750; letter-spacing: .1em; }
+    .ad h2 { margin: 8px 0; color: #24344D; font-size: 1.35rem; }
+    .ad p { margin: 10px 0 0; color: #405674; }
+    .ad p.ad-rate { color: #2463A6; font-size: 1.08rem; font-weight: 700; }
+    .form-panel { padding: 16px; border: 1px solid #E1E7F0; border-radius: 9px; background: #FFFFFF; }
+    .form-panel h3 { margin: 0; color: #24344D; font-size: 1.05rem; }
+    .form-panel fieldset { margin: 0; padding: 0; border: 0; }
+    .form-panel label { display: block; margin-top: 12px; color: #405674; font-size: .9rem; }
+    .form-panel input, .form-panel textarea { width: 100%; margin-top: 4px; padding: 9px; border: 1px solid #DCE5F0; border-radius: 6px; background: #F7F9FC; color: #172B4D; font: inherit; }
+    .form-panel button { margin-top: 14px; padding: 9px 14px; border: 0; border-radius: 6px; background: #2463A6; color: #F8FAFC; font: inherit; font-weight: 700; }
+    .form-panel button:disabled { cursor: not-allowed; background: #DCE5F0; color: #405674; }
+    .form-panel .form-note { margin-top: 12px; padding-left: 12px; border-left: 3px solid #FBBF24; color: #243B5A; font-size: .86rem; }
+    .suggestions { margin-top: 36px; }
+    .suggestions > p { max-width: 700px; color: #52627A; }
+    .suggestions-form { max-width: 760px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    article { padding: 20px; background: #182532; border: 1px solid #263746; border-radius: 12px; }
-    article p { color: #bdcbd8; }
-    .notice { margin-top: 28px; padding: 18px; border-left: 4px solid #e6ba63; background: #202a31; border-radius: 6px; color: #d3dce4; }
-    footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 44px; padding-top: 20px; border-top: 1px solid #334455; color: #9eacba; font-size: .9rem; }
+    article { padding: 20px; background: #F7F9FC; border: 1px solid #E1E7F0; border-radius: 12px; }
+    article h3 { color: #24344D; }
+    article p { color: #52627A; }
+    .demo-app { margin-top: 28px; overflow: hidden; border: 1px solid #DCE5F0; border-radius: 12px; background: #E7F0FF; }
+    .demo-topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid #DCE5F0; background: #243B5A; color: #C6D3E5; }
+    .demo-topbar strong { color: #F8FAFC; }
+    .demo-label { color: #2463A6; font-size: .78rem; font-weight: 750; letter-spacing: .1em; }
+    .demo-badge { padding: 4px 9px; border: 1px solid #A5B4FC; border-radius: 999px; background: #A5B4FC; color: #172B4D; font-size: .72rem; font-weight: 750; letter-spacing: .04em; }
+    .demo-body { padding: 20px; }
+    .demo-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .demo-heading h3 { margin: 4px 0 0; color: #24344D; font-size: 1.3rem; }
+    .demo-score { display: flex; align-items: center; gap: 10px; }
+    .demo-score strong { color: #2F80D1; font-size: 2rem; line-height: 1; }
+    .demo-score span { color: #52627A; font-size: .84rem; line-height: 1.3; }
+    .demo-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 0; }
+    .demo-stats > div { padding: 15px; border: 1px solid #E1E7F0; border-top: 3px solid #2F80D1; border-radius: 9px; background: #FFFFFF; }
+    .demo-stats > div:nth-child(2) { border-top-color: #6EE7B7; }
+    .demo-stats > div:nth-child(3) { border-top-color: #7DD3FC; }
+    .demo-stats dt { color: #52627A; font-size: .86rem; }
+    .demo-stats dd { margin: 5px 0 0; color: #24344D; font-size: 1.18rem; font-weight: 700; }
+    .demo-stats dd small { color: #52627A; font-weight: 400; }
+    .demo-note { margin: 16px 0 0; color: #52627A; font-size: .86rem; }
+    .notice { margin-top: 28px; padding: 18px; border-left: 4px solid #FBBF24; background: #FFFFFF; border-radius: 6px; color: #405674; }
+    .notice strong { color: #24344D; }
+    footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 44px; padding-top: 20px; border-top: 1px solid #E1E7F0; color: #52627A; font-size: .9rem; }
     @media (max-width: 600px) { main { padding-inline: 18px; } .hero { padding-top: 54px; } }
   </style>
 </head>
@@ -53,9 +102,40 @@
       <div class="meta">Version 1.4.0 · Windows x64 · Lightweight package</div>
     </header>
 
-    <aside class="ad" aria-label="Advertisement">
-      <div><small>ADVERTISEMENT</small>Ad space</div>
-      <!-- Add a reputable ad provider's embed only after reviewing its privacy and consent requirements. -->
+    <section class="purchase" aria-labelledby="purchase-title">
+      <div class="purchase-card">
+        <div>
+          <span class="purchase-kicker">SOFTWARE LICENSE</span>
+          <h2 id="purchase-title">WinHealthMonitor</h2>
+          <p class="purchase-price"><strong>£2.99</strong> one-time purchase</p>
+          <p class="purchase-license">Single-device license</p>
+        </div>
+        <div>
+          <a class="purchase-link" href="purchase.html">View purchase page</a>
+          <p class="purchase-note">Pay via the QR code on the purchase page. License-key generation and delivery are manual, not automatic.</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="ad" aria-labelledby="ad-offer-title">
+      <div class="ad-content">
+        <div>
+          <small>INTRODUCTORY AD OFFER</small>
+          <h2 id="ad-offer-title">One responsive banner</h2>
+          <p class="ad-rate">USD $10/month flat rate</p>
+          <p>No guaranteed impressions.</p>
+        </div>
+        <form class="form-panel" aria-labelledby="ad-inquiry-title">
+          <h3 id="ad-inquiry-title">Ad inquiry</h3>
+          <fieldset disabled>
+            <label>Name <input type="text" name="name" autocomplete="name"></label>
+            <label>Email <input type="email" name="email" autocomplete="email"></label>
+            <label>Message <textarea name="message" rows="3"></textarea></label>
+            <button type="submit" disabled>Send inquiry</button>
+          </fieldset>
+          <p class="form-note">This form is not connected yet. Submissions are disabled.</p>
+        </form>
+      </div>
     </aside>
 
     <section id="features" aria-labelledby="features-title">
@@ -74,13 +154,58 @@
           <p>Save health reports, schedule optional weekly scans, and run confirmed Windows repair checks when you choose.</p>
         </article>
       </div>
+      <div class="demo-app" role="group" aria-labelledby="demo-title">
+        <div class="demo-topbar">
+          <strong>WinHealthMonitor</strong>
+          <span class="demo-badge">DEMO · SAMPLE DATA</span>
+        </div>
+        <div class="demo-body">
+          <div class="demo-heading">
+            <div>
+              <span class="demo-label">PC OVERVIEW</span>
+              <h3 id="demo-title">System health</h3>
+            </div>
+            <div class="demo-score" aria-label="Sample health score: 92 out of 100">
+              <strong>92</strong>
+              <span>/ 100<br>Health score</span>
+            </div>
+          </div>
+          <dl class="demo-stats">
+            <div>
+              <dt>Drive space</dt>
+              <dd>68% used<br><small>Windows (C:) · sample</small></dd>
+            </div>
+            <div>
+              <dt>Storage events</dt>
+              <dd>0 recent<br><small>Past 7 days · sample</small></dd>
+            </div>
+            <div>
+              <dt>CPU temperature</dt>
+              <dd>48 °C<br><small>HWiNFO · sample</small></dd>
+            </div>
+          </dl>
+          <p class="demo-note">Illustrative sample values only — this preview is not connected to your PC or live telemetry.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="suggestions" aria-labelledby="suggestions-title">
+      <h2 id="suggestions-title">Suggestions</h2>
+      <p>Have an idea for improving WinHealthMonitor? Share it below.</p>
+      <form class="form-panel suggestions-form" aria-labelledby="suggestion-form-title">
+        <h3 id="suggestion-form-title">Share a suggestion</h3>
+        <label for="suggestion-text">Your suggestion</label>
+        <textarea id="suggestion-text" name="suggestion" rows="5" disabled></textarea>
+        <button type="submit" disabled>Submit suggestion</button>
+        <p class="form-note">This form is not connected yet. Suggestions can't be submitted from this page.</p>
+      </form>
     </section>
 
     <p class="notice"><strong>Requirements and security:</strong> This lightweight package requires the Microsoft .NET 10 Desktop Runtime for Windows x64. The app package is unsigned, so Windows may display a security warning. Only run software you trust. Health checks are indicators, not a diagnosis; back up important data before system repairs.</p>
 
     <footer>
       <span>WinHealthMonitor · Windows x64</span>
-      <span>Publisher: <a href="mailto:antonio.escorpiao.ferreira@gmail.com">scorpionprime2</a></span>
+      <span>Publisher: scorpionprime2</span>
     </footer>
   </main>
 </body>
