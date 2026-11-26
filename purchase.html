@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Purchase a single-device WinHealthMonitor license.">
+  <meta name="description" content="Purchase a single-device WinHealthMonitor license or view developer bulk-license information.">
   <meta name="theme-color" content="#F3F6FB">
   <title>Purchase WinHealthMonitor</title>
   <style>
@@ -33,6 +33,11 @@
     figcaption { margin-top: 10px; color: #24344D; font-size: .9rem; }
     .notice { margin-top: 24px; padding: 18px; border-left: 4px solid #FBBF24; border-radius: 6px; background: #FFFFFF; color: #405674; }
     .notice strong { color: #24344D; }
+    .bulk-offer { margin-top: 24px; padding: 24px; border: 1px solid #DCE5F0; border-radius: 12px; background: #E7F0FF; }
+    .bulk-offer h2 { margin: 8px 0 12px; color: #172B4D; font-size: 1.45rem; line-height: 1.2; }
+    .bulk-offer p, .bulk-offer li { color: #405674; }
+    .bulk-offer ul { padding-left: 22px; }
+    .bulk-note { margin-bottom: 0; font-size: .92rem; }
     .back { display: inline-block; margin-top: 24px; color: #2463A6; }
     @media (max-width: 760px) { main { padding-inline: 18px; } .purchase { margin-top: 32px; } .purchase-card { grid-template-columns: 1fr; } }
   </style>
@@ -59,6 +64,20 @@
       </div>
 
       <p class="notice"><strong>Manual license fulfillment:</strong> After payment is reviewed, the license key is generated and delivered manually. Key generation and delivery are not automatic.</p>
+
+      <section class="bulk-offer" aria-labelledby="bulk-title">
+        <div class="eyebrow">DEVELOPER / BULK LICENSING</div>
+        <h2 id="bulk-title">Bulk licenses for developers</h2>
+        <p>Developers can inquire about purchasing multiple single-device license keys.</p>
+        <ul>
+          <li>Each key licenses one device.</li>
+          <li>Keys and licenses may not be resold or redistributed.</li>
+          <li>Volume pricing is provided by inquiry; no rates or minimum quantities are published here.</li>
+          <li>Bulk keys are generated and fulfilled manually after arrangements are confirmed.</li>
+        </ul>
+        <p class="bulk-note">Bulk pricing inquiries and checkout are not connected on this page. The PayPal QR above is for the £2.99 single-device purchase only.</p>
+      </section>
+
       <a class="back" href="index.html">Return to the WinHealthMonitor website</a>
     </section>
   </main>
